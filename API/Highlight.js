@@ -1,6 +1,5 @@
 var db = require('../DAO/Connection');
 var sqlCommands = require('../DAO/commonSQL');
-var myJson = require('./jsonParser');
 var session = require('express-session');
 var redisStore = require('connect-redis')(session);
 var multipart = require('connect-multiparty');
