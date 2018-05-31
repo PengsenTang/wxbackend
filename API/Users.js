@@ -19,7 +19,8 @@ function login(req, res, next){
             console.log("[open_id]",data.openid)
             console.log("[session]",data.session_key)
             req.session.openId = data.openid;
-            res.send({"as":"as"});
+	    req.session.flag = 1  
+          res.send({"as":"as"});
         }   
     })
 }

@@ -22,6 +22,9 @@ router.use(session({
 router.all('/login',function(req,res,next){
 	Users.login(req,res,next)
 })
+router.all('/test',function(req,res,next){
+	console.log(req.session)
+})
 
 
 router.all('/newSite',multipartMiddleware, function(req, res, next) {
