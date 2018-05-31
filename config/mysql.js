@@ -1,9 +1,9 @@
 //connect mysql
 mysql = {
-        host: '47.93.19.169', 
+        host: '47.95.243.80', 
         user: 'root',
-        password: 'Root-123',
-        database:'tinyworld',
+        password: 'root',
+        database:'fun',
         port:3306,
         connectionLimit:20
 }
