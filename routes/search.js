@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Users = require('../API/users');
+var Users = require('../API/Users');
 var request = require('request');
 var session = require('wafer-node-session');
 var RedisStore = require('connect-redis')(session);

@@ -25,6 +25,4 @@ yuhang meng
 
 //exports
 module.exports = {
-    userinfo : userinfo,
-    users:users
-};
+    highlight:highlight};

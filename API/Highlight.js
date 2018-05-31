@@ -15,12 +15,12 @@ function newHighlight(req, res, next){
             'msg': 'parameter error'
         });
     }
-    else{
-        db.queryArgs(sqlCommands.highlight.newHighlight, req.body.id, function(err, result) {
-                db.doReturn(res, 200, 'success', result);
-            }
-        );
-    }
+    //else{
+      //  db.queryArgs(sqlCommands.highlight.newHighlight, req.body.id, function(err, result) {
+        //        db.doReturn(res, 200, 'success', result);
+          //  }
+        //);
+    //}
 }
 
 
@@ -28,9 +28,5 @@ function newHighlight(req, res, next){
 
 
 module.exports = {
-    get_userinfo_all: get_userinfo_all,
-    get_userinfo: get_userinfo,
-    update_userinfo: update_userinfo,
-    update_userinfos: update_userinfos,
-    user_list: user_list
+	newHighlight:newHighlight
 };

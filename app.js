@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var UsersRouter = require('./routes/users');
 var RelationshipRouter = require('./routes/relationship');
-var InviteRouter = require('./routes/invitation');
+var HighlightRouter = require('./routes/highlight');
 var SearchRouter = require('./routes/search');
 var MessageRouter = require('./routes/message');
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', UsersRouter);
 app.use('/relationship', RelationshipRouter);
-app.use('/invite', InviteRouter);
+app.use('/highlight', HighlightRouter);
 app.use('/search', SearchRouter);
 app.use('/message', MessageRouter);
 
