@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var UserInfo = require('../API/Highlight');
+var Highlight = require('../API/Highlight');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,14 +8,12 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/get_userinfo_all', function(req, res, next) {
-	UserInfo.get_userinfo_all(req, res, next);
+router.post('/newHighlight', function(req, res, next) {
+	Highlight.newHighlight(req,res,next);
 });
 
 
-router.post('/get_userinfo', function(req, res, next) {
-	UserInfo.get_userinfo(req, res, next);
-});
+
 
 
 
