@@ -1,7 +1,7 @@
 //
 var highlight = {
 	phone_register:'insert into user_info(phone_number,name,gender,register_time) values(?,?,?,?)',
-	create_authentication:'insert into authentication values(?,?)',
+	new_highlight:'insert into location values(?,?,?,?,?,?,?)'
 }
 /**
 pengsen tang
