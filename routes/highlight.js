@@ -22,6 +22,10 @@ router.all('/newHighlight', multipartMiddleware,function(req, res, next) {
 	Highlight.newHighlight(req,res,next);
 });
 
+router.all('/query'), function(req, res, next) {
+    Highlight.queryHighlight(req,res,next)
+});
+
 
 
 
