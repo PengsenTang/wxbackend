@@ -69,8 +69,33 @@ function newHighlight(req, res, next){
 		    }
 		})
 	} 	
-    }
+}
 
+function rateHighlight(req,res,next){
+	if(!req.body.rate || !req.session.openId || !req.body.locationid){
+		res.json({
+			"code":"201",
+			"msg":"parameter error"
+		})
+	}
+	else{
+        var param = [] 
+        param.push(req.body.locationid)
+        param.push(req.session.openId)
+        db.queryArgs(sqlCommands.highlight.whether_rate,param,
+        	function(err,result){
+                if(result){
+                	console.log(result)
+                }
+                else{
+                	res.json({
+                		"code":"201",
+                		"msg":"Something Wrong"
+                	})
+                }
+        	})
+	}
+}
 
 
 

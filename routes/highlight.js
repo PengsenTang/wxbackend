@@ -26,6 +26,11 @@ router.all('/newHighlight', multipartMiddleware,function(req, res, next) {
 	Highlight.newHighlight(req,res,next);
 });
 
+router.post('/rate', function(req, res, next) {
+	Highlight.rateHighlight(req,res,next);
+});
+
+
 router.all('/query', function(req, res, next) {
     var data = req.query
     var longitude = parseFloat(data.longitude)
