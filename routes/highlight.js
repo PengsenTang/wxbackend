@@ -5,8 +5,12 @@ var session = require('express-session');
 var redisStore = require('connect-redis')(session);
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
-
+var bodyParser = require('body-parser');
+var fs = require('fs');
+var os = require('os');
 /* GET home page. */
+router.use(bodyParser.json({limit: '1mb'}))
+router.use(bodyParser.urlencoded({extended: true }))
 router.use(session({
 	store:new redisStore(),
 	secret:'superduper',
@@ -22,8 +26,14 @@ router.all('/newHighlight', multipartMiddleware,function(req, res, next) {
 	Highlight.newHighlight(req,res,next);
 });
 
-router.all('/query'), function(req, res, next) {
-    Highlight.queryHighlight(req,res,next)
+router.all('/query', function(req, res, next) {
+    var data = req.query
+    var longitude = parseFloat(data.longitude)
+    var latitude = parseFloat(data.latitude)
+    var scale = parseInt(data.scale)
+    Highlight.queryHighlight(longitude, latitude, scale,function(result){
+	res.json(result)
+	})
 });
 
 
