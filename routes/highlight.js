@@ -36,8 +36,9 @@ router.all('/query', function(req, res, next) {
     var longitude = parseFloat(data.longitude)
     var latitude = parseFloat(data.latitude)
     var scale = parseInt(data.scale)
-    Highlight.queryHighlight(longitude, latitude, scale,function(result){
-	res.json(result)
+    var uid = req.session.openId
+    Highlight.queryHighlight(longitude, latitude, scale, uid, function(result){
+	res.json(result[0])
 	})
 });
 

@@ -11,8 +11,8 @@ function query(sql, callback) {
         }
         else{ 
             connection.query(sql, function (err, rows) {              
-                callback(err, rows);
-                connection.release();//release 
+                callback(err,rows);
+		connection.release();//release 
             });
         }
         
@@ -27,9 +27,8 @@ function queryArgs(sql, args, callback) {
         }
         else{
             connection.query(sql, args,function (err, rows) {
-                callback(err, rows);
-                console.log(rows);
-                connection.release();
+                callback(err,rows);
+		connection.release();
             });
         }
         
